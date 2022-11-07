@@ -1,0 +1,12 @@
+/* :root {
+    --primary-colour:white;
+    --secondary-colour:#e44d4d;
+}
+
+html, body {
+    background-color: var(--primary-colour); 
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
