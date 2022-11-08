@@ -1,12 +1,52 @@
-/* :root {
+:root {
     --primary-colour:white;
     --secondary-colour:#e44d4d;
+
+    --standard-margin: 4rem;
+    --standard-padding: 1rem;
 }
 
 html, body {
     background-color: var(--primary-colour); 
-} */
+    color: var(--primary-colour);
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-@tailwind base;
+.card {
+    background-color: var(--secondary-colour);
+    margin-left: var(--standard-margin);
+    margin-right: var(--standard-margin);
+    padding: var(--standard-padding);
+
+    border-radius: calc(var(--standard-margin)/3);
+}
+.card > h2 {
+    font-weight: 100;
+}
+
+.title {
+    color: var(--secondary-colour);
+}
+.title > h1 {
+    font-size: 8rem;
+    margin-top: 1rem;
+}
+.title > h2 {
+    margin-top: -6rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.divider {
+    border-radius: calc(var(--standard-margin)/3);
+    background-color: var(--secondary-colour);
+    margin-left: var(--standard-margin);
+    margin-right: var(--standard-margin);
+    margin-bottom: calc(var(--standard-margin)/3);
+    height: 1rem;
+}
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */

@@ -1,35 +1,66 @@
 <html>
-    <head>
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-          
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-              apiKey: "AIzaSyARZZEyUrC8ey0aDawc62F8n9PRX-JPkKE",
-              authDomain: "abacus-240a5.firebaseapp.com",
-              projectId: "abacus-240a5",
-              storageBucket: "abacus-240a5.appspot.com",
-              messagingSenderId: "197360874438",
-              appId: "1:197360874438:web:6e0c8eb22ccc18883038c7",
-              measurementId: "G-CVK0VKN11R"
-            };
-          
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
-          </script>
-          <script src="main.js"></script>
 
-          <link href="../dist/output.css" rel="stylesheet">
-    </head>
-    <body>
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </body>
+<head>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import {
+      initializeApp
+    } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+    import {
+      getAnalytics
+    } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyARZZEyUrC8ey0aDawc62F8n9PRX-JPkKE",
+      authDomain: "abacus-240a5.firebaseapp.com",
+      projectId: "abacus-240a5",
+      storageBucket: "abacus-240a5.appspot.com",
+      messagingSenderId: "197360874438",
+      appId: "1:197360874438:web:6e0c8eb22ccc18883038c7",
+      measurementId: "G-CVK0VKN11R"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  <script src="main.js"></script>
+
+  <!-- <link href="../dist/output.css" rel="stylesheet"> -->
+  <link href="./input.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Toolbar -->
+  <div></div>
+  <!-- Main Content  -->
+  <div>
+    <!-- Title section -->
+    <div class="title center">
+      <h1>ABACUS</h1>
+      <h2>Avancerad matematik och
+        programmering för nyfikna
+        högstadieelever</h2>
+    </div>
+    <!-- divider -->
+    <div class="divider"></div>
+    <!-- Section 1 -->
+    <div class="card">
+      <h2>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque, odio nec aliquet vehicula, quam ligula porttitor tortor, non efficitur tortor nisl ut massa. Integer id nisl eget tortor tincidunt vulputate. Maecenas venenatis vestibulum felis ut gravida. Sed sodales ipsum velit, sed posuere elit volutpat sit amet. Donec at pellentesque mauris. Quisque quis aliquet libero. Nam ut velit lobortis, euismod neque vel, ultrices quam. Maecenas consequat imperdiet ipsum ac pharetra. Sed cursus, purus sit amet efficitur pellentesque, nulla velit consectetur ante, ut dignissim est sem vitae ex.
+        <br><br>
+        Phasellus lobortis suscipit ipsum sed hendrerit. Quisque fringilla malesuada viverra. Fusce cursus fermentum ligula a feugiat. Morbi nec odio ut metus accumsan iaculis vel et risus. Fusce rhoncus sagittis ipsum sed finibus. Sed ut euismod tortor, sit amet sagittis erat. Sed efficitur nec turpis vel commodo. Nunc eget pretium metus. Nam consequat, erat sed laoreet fringilla, justo turpis consequat turpis, non egestas turpis magna vel arcu. Donec iaculis posuere arcu.
+        <br><br>
+        Duis facilisis, nisl non vehicula rhoncus, lectus sem pharetra turpis, pharetra semper enim justo a libero. Cras rhoncus turpis ex, quis tincidunt nisl dignissim a. Pellentesque ut tellus sed tellus semper semper. Vivamus ut augue a ex vestibulum tristique in a quam. Pellentesque lacinia lacus nec mi imperdiet tincidunt. Aliquam facilisis in magna et posuere. Cras dictum orci ut metus fermentum, ut laoreet dolor facilisis. Nam eu euismod quam. Mauris laoreet consequat rhoncus.
+        <br><br>
+        Vestibulum sodales, velit non vulputate euismod, felis diam pharetra nunc, id laoreet lectus dolor sed justo. Etiam ac laoreet nulla, id feugiat risus. Curabitur est lorem, consectetur quis congue nec, consequat nec sem. Donec tortor libero, porttitor auctor lobortis ac, rhoncus sit amet dolor. Aenean vel lorem risus. Aenean quis lectus feugiat, accumsan ipsum ut, porttitor tortor. Integer malesuada id tellus quis mollis. Praesent mi augue, mollis a fermentum ut, rhoncus suscipit purus. Pellentesque vehicula felis sem, quis volutpat magna consectetur a. Donec mi nulla, lobortis sit amet elementum ut, accumsan eu neque.
+      </h2>
+    </div>
+  </div>
+</body>
+
 </html>
