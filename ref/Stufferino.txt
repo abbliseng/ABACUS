@@ -1,0 +1,14 @@
+- Inloggningssystem
+	- Lägga till nya händelser
+	- Schema
+- Visa schema
+- Färgtema
+	- inbjudan, röd och vit
+- Visa nyheter/informera event
+- Om oss
+	- Vision/syfte
+	- Kontaktuppgifter
+- Information kring höstlovet
+
+
+- Kolla upp domän, hur man gör osv.
