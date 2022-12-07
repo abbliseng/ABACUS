@@ -12,3 +12,4 @@
 
 
 - Kolla upp domän, hur man gör osv.
+- Figma, mockup
