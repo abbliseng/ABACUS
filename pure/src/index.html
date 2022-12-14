@@ -1,60 +1,46 @@
+<!doctype html>
 <html>
 
 <head>
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import {
-      initializeApp
-    } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-    import {
-      getAnalytics
-    } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyARZZEyUrC8ey0aDawc62F8n9PRX-JPkKE",
-      authDomain: "abacus-240a5.firebaseapp.com",
-      projectId: "abacus-240a5",
-      storageBucket: "abacus-240a5.appspot.com",
-      messagingSenderId: "197360874438",
-      appId: "1:197360874438:web:6e0c8eb22ccc18883038c7",
-      measurementId: "G-CVK0VKN11R"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
-  <script src="main.js"></script>
-
-  <!-- <link href="../dist/output.css" rel="stylesheet"> -->
-  <link href="./input.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <script src="./main.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
-  <!-- Toolbar -->
-  <div></div>
-  <!-- Main Content  -->
-  <!-- Title section -->
-  <div class="title center">
-    <h1>ABACUS</h1>
-    <h2>Avancerad matematik och
-      programmering för nyfikna
-      högstadieelever</h2>
-  </div>
-  <!-- Toolbar -->
-  <div class="toolbar">
-    <!-- <div>Hem</div>
-    <div>Nyheter</div>
-    <div>Bli medlem </div> -->
-  </div>
-  <!-- Section 1 -->
-  <div class="section-1">
+    <!-- Main page content -->
+    <div id="main_content">
+        <div class="toolbar bg-red"></div>
+        <div>Nyheter</div>
+        <div>Om oss</div>
+    </div>
+    <!-- Page for sign in forms and such -->
+    <div id="sign_in">
+        <div>Inloggning</div>
+    </div>
+    <!-- <h1 class="text-3xl font-bold underline">
+        Hello world!
+    </h1> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-  </div>
+    <!-- <div id="app">{{ message }}</div> -->
+
+
 </body>
+
+<script>
+    const { createApp } = Vue
+
+    createApp({
+        data() {
+            return {
+                current_view: 'home',
+                message: 'Hello Vue!'
+            }
+        }   
+    }).mount('#app')
+</script>
 
 </html>

@@ -1,13 +1,6 @@
-/* :root {
-    --primary-colour:white;
-    --secondary-colour:#e44d4d;
-}
-
-html, body {
-    background-color: var(--primary-colour); 
-} */
-
-/* ! tailwindcss v3.2.2 | MIT License | https://tailwindcss.com */
+/*
+! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
+*/
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
