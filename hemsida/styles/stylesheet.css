@@ -1,28 +1,27 @@
 .main {
     position: relative;
-    /* width: 1440px;
-    height: 2131px; */
-
     overflow-x: hidden;
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
+    background: #fcf269; /* Temp debug background colour */
 }
 
-/* #page-view {
+/* TODO: Fix the repeating math wallpaper */
+#page-view {
+    position: absolute;
+    width: calc(100vw + 10px);
+    height: 1000px; /* FIXME: Make flex-y? :^) */
     top: -78px;
-
-    width: 100vw;
-    height: 10px;
-
-    background-color: #ac3b3b;
-} */
+    left: -10px;
+    background-color: #ffffff;
+}
 
 .header {
+    z-index: 10;
     position: absolute;
     width: calc(100vw + 10px);
     height: 68px;
     left: -10px;
     top: -10px;
-
     background: #E04E4F;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -50,18 +49,10 @@
 }
 /* Individual header buttons */
 /* TODO: Find nicer way to make these spacings. Flex? */
-#senaste {
-    left: calc(25% - 60px);
-}
-#nyheter {
-    left: calc(42.5% - 60px);
-}
-#om-oss {
-    left: calc(57.5% - 60px);
-}
-#kontakt {
-    left: calc(75% - 60px);
-}
+#senaste    {left: calc(25% - 60px);    }
+#nyheter    {left: calc(42.5% - 60px);  }
+#om-oss     {left: calc(57.5% - 60px);  }
+#kontakt    {left: calc(75% - 60px);    }
 
 .header-btn:hover {
     text-decoration: underline;
