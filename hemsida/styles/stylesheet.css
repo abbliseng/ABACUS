@@ -8,10 +8,11 @@
 /* TODO: Fix the repeating math wallpaper */
 #page-view {
     position: absolute;
+    padding-top: 68px;
     width: calc(100vw + 10px);
     height: 1000px; /* FIXME: Make flex-y? :^) */
-    top: -78px;
     left: -10px;
+    top: -10px;
     background-color: #ffffff;
 }
 
@@ -43,7 +44,7 @@
     line-height: 35px;
     text-align:center; 
 
-    color: #FFFFFF;
+    color: #ffc3c4;
     background-color: transparent;
     border:rgba(0, 0, 0, 0);
 }
@@ -55,7 +56,7 @@
 #kontakt    {left: calc(75% - 60px);    }
 
 .header-btn:hover {
-    text-decoration: underline;
+    color: #FFFFFF;
 }
 /* Profile button */
 #profil {

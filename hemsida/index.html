@@ -4,6 +4,7 @@
     <head>
         <link href='https://fonts.googleapis.com/css?family=Heebo' rel='stylesheet'>
         <link rel="stylesheet" href="./styles/stylesheet.css"></link>
+        <script src="main.js"></script>
     </head>
     <body class="main">
         <div id="header" class="header">
@@ -11,16 +12,20 @@
             <button id="nyheter" class="header-btn">Nyheter</button>
             <button id="om-oss" class="header-btn">Om oss</button>
             <button id="kontakt" class="header-btn">Kontakt</button>
-            <button id="profil">
+            <button id="profil" onclick="show_profile()">
                 <img src="./assets/profile-white.png" alt="">
             </button>
         </div>
         <div id="page-view">
-            <div id="home-page"></div>
-            <div id="login-page">
-                <!-- <h1>LOGIN</h1> -->
+            <div id="home-page">
+                <h1>HOME</h1>
             </div>
-            <div id="profile-page"></div>
+            <div id="login-page">
+                <h1>LOGIN</h1>
+            </div>
+            <div id="profile-page">
+                <h1>PROFILE</h1>
+            </div>
         </div>
     </body>
 </html>
