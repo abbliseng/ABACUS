@@ -1,0 +1,98 @@
+.login-card {
+    position: absolute; 
+    width: 30rem;
+    /* width: 566px; */
+    height: 20rem;
+    /* height: 422px; */
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.login-card>#title {
+    font-size: 22px;
+}
+
+.login-card>form>#usr {
+    position: relative;
+    display: block;
+
+    /* FIXME: Might need to be relative/scaling height*/
+    height: 49px;
+    width: 80%;
+    margin:auto;
+    margin-top: 15px;
+    
+    padding-left: 15px;
+    border: rgba(0, 0, 0, 0);
+    font-size: 1.25rem;
+    outline: none;
+}
+.login-card>form>#pass {
+    position: relative;
+    display: block;
+
+    /* FIXME: Might need to be relative/scaling height*/
+    height: 49px;
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+    
+    padding-left: 15px;
+    border: rgba(0, 0, 0, 0);
+    font-size: 1.25rem;
+    outline: none;
+}
+
+.ph::placeholder{
+    color: #FFB2B3;
+}
+
+.login-card>form>button {
+    position: absolute;
+    width: 487px;
+    height: 70px;
+    left: 38px;
+    top: 319px;
+    border: rgba(0, 0, 0, 0);
+
+
+    /* TODO: Make font bolder */
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 35px;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+
+    background: #FFFFFF;
+    border-radius: 35px;
+    cursor: pointer;
+    /* Animation thing */
+    transition: all .1s ease-in-out;
+}
+
+/* Animation thing */
+.login-card>form>button:hover {
+    transform: scale(1.05);
+}
+
+.remember-me {
+    margin-top: 15px;
+}
+
+.remember-me>label {
+    position: relative;
+    left: 6.65rem;
+}
+
+.remember-me>span {
+    position: relative;
+    right: 6.65rem;
+    font-size: 1.25rem;
+}

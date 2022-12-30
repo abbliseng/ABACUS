@@ -1,0 +1,64 @@
+/* Colours */
+.bg-red {
+    background: #E04E4F;
+}
+.bg-dark-red {
+    background: #CB3132;
+}
+.light-red {
+    color: #FFB2B3;
+}
+.white {
+    color: #FFFFFF;
+}
+.bg-white {
+    background: #FFFFFF;
+}
+
+/* Stuff */
+.no-touchy {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+/* Flex-y stuff */
+.center-x {
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.center-y {
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* DEFAULT FONT n' SHITE */
+span {
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+}
+h1 {
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+}
+input {
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+}
+button {
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+}
