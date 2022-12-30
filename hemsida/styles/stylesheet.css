@@ -2,7 +2,21 @@
     position: relative;
     overflow-x: hidden;
     /* background: #FFFFFF; */
-    background: #fcf269; /* Temp debug background colour */
+    background: #fcf269;
+    /* Temp debug background colour */
+}
+
+.h-font {
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+}
+
+.bg-red {
+    background: #E04E4F;
+}
+.bg-dark-red {
+    background: #CB3132;
 }
 
 /* TODO: Fix the repeating math wallpaper */
@@ -10,7 +24,8 @@
     position: absolute;
     padding-top: 68px;
     width: calc(100vw + 10px);
-    height: 1000px; /* FIXME: Make flex-y? :^) */
+    height: calc(1000px - 120px);
+    /* FIXME: Make flex-y? :^) */
     left: -10px;
     top: -10px;
     background-color: #ffffff;
@@ -23,7 +38,6 @@
     height: 68px;
     left: -10px;
     top: -10px;
-    background: #E04E4F;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -37,27 +51,37 @@
 
     padding: 0px;
 
-    font-family: 'Heebo';
-    font-style: normal;
-    font-weight: 500;
     font-size: 24px;
     line-height: 35px;
-    text-align:center; 
+    text-align: center;
 
     color: #ffc3c4;
     background-color: transparent;
-    border:rgba(0, 0, 0, 0);
+    border: rgba(0, 0, 0, 0);
 }
+
 /* Individual header buttons */
 /* TODO: Find nicer way to make these spacings. Flex? */
-#senaste    {left: calc(25% - 60px);    }
-#nyheter    {left: calc(42.5% - 60px);  }
-#om-oss     {left: calc(57.5% - 60px);  }
-#kontakt    {left: calc(75% - 60px);    }
+#senaste {
+    left: calc(25% - 60px);
+}
+
+#nyheter {
+    left: calc(42.5% - 60px);
+}
+
+#om-oss {
+    left: calc(57.5% - 60px);
+}
+
+#kontakt {
+    left: calc(75% - 60px);
+}
 
 .header-btn:hover {
     color: #FFFFFF;
 }
+
 /* Profile button */
 #profil {
     cursor: pointer;
@@ -67,9 +91,198 @@
     top: calc(20px/2);
 
     background-color: transparent;
-    border:rgba(0, 0, 0, 0);
+    border: rgba(0, 0, 0, 0);
 }
 
-#profil>img{
+#profil>img {
     width: calc(68px - 20px);
 }
+
+/* LOGIN */
+.login-card {
+    position: absolute;
+    width: 566px;
+    height: 422px;
+    left: 437px;
+    top: 199px;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.login-card>#title {
+    position: absolute;
+    width: 485px;
+    height: 71px;
+    left: 40px;
+    top: 14px;
+
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 47px;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.login-card>form>#usr {
+    position: absolute;
+    padding-left: 15px;
+    width: calc(486px - 13px);
+    height: 70px;
+    left: 40px;
+    top: 86px;
+    border: rgba(0, 0, 0, 0);
+
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 35px;
+    align-items: center;
+
+    color: #FFFFFF;
+    outline: none;
+}
+.login-card>form>#pass {
+    position: absolute;
+    padding-left: 15px;
+    width: calc(486px - 13px);
+    height: 70px;
+    left: 40px;
+    top: 170px;
+    border: rgba(0, 0, 0, 0);
+
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 35px;
+    align-items: center;
+
+    color: #FFFFFF;
+
+    outline: none;
+}
+
+.ph::placeholder{
+    color: #FFB2B3;
+}
+
+.login-card>form>button {
+    position: absolute;
+    width: 487px;
+    height: 70px;
+    left: 38px;
+    top: 319px;
+    border: rgba(0, 0, 0, 0);
+
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 35px;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+
+    background: #FFFFFF;
+    border-radius: 35px;
+    cursor: pointer;
+    /* Animation thing */
+    transition: all .1s ease-in-out;
+}
+
+/* Animation thing */
+.login-card>form>button:hover {
+    transform: scale(1.05);
+}
+
+.login-card>#remember-me {
+    position: absolute;
+    /* width: 486px; */
+    height: 71px;
+    left: 38px;
+    top: 240px;
+
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+
+    color: #FFB2B3;
+}
+
+/* SWITCH */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    left: 470px;
+    top: 260px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 34px;
+    width: 34px;
+    /* left: 4px;
+    bottom: 4px; */
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #8dd174;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #8dd174;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+/* END SWITCH */
