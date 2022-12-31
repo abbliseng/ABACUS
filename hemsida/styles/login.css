@@ -51,11 +51,11 @@
 }
 
 .login-card>form>button {
-    position: absolute;
-    width: 487px;
+    position: relative;
+    width: 80%;
     height: 70px;
-    left: 38px;
-    top: 319px;
+    margin:auto;
+    margin-top: 15px;
     border: rgba(0, 0, 0, 0);
 
 
@@ -82,17 +82,13 @@
     transform: scale(1.05);
 }
 
+/* .remember-me>label {
+    position: relative;
+    margin-left: 52%;
+} */
+
 .remember-me {
-    margin-top: 15px;
-}
-
-.remember-me>label {
     position: relative;
-    left: 6.65rem;
-}
-
-.remember-me>span {
-    position: relative;
-    right: 6.65rem;
     font-size: 1.25rem;
+    top: 10px;
 }
