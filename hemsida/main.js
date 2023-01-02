@@ -36,5 +36,7 @@ function show_profile() {
 // MAIN
 // Only runs once page has fully loaded
 window.addEventListener('load', function () {
-    hide_all_but_one('home-page')
+    this.document.getElementById('event-card-title').innerHTML = "BOLIBOMPA DRAKEN SLÅR TILL IGEN!"
+    this.document.getElementById('event-card-temp').innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed sapien ac enim pretium pulvinar id vel neque. Donec lobortis porta magna, vitae mattis nisi fringilla a. Sed sed iaculis urna. Morbi sit amet mauris accumsan, condimentum neque fringilla, imperdiet sapien. Curabitur vitae nunc augue. Sed eget turpis et augue viverra efficitur eleifend id diam. Nulla eu velit massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi consequat tempus mattis. Etiam consequat nibh ut lacus dignissim dapibus. <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget libero a nisl interdum ullamcorper ac id dui. Proin tincidunt, nunc sed porta tempus, leo sem ullamcorper metus, at tincidunt leo mi sed elit."
+    // hide_all_but_one('home-page')
 })

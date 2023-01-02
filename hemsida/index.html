@@ -25,16 +25,30 @@
 
 <body class="main">
     <div data-include="toolbar"></div>
-    <div id="page-view">
-        <div id="home-page">
-            <h1>HOME</h1>
+    <div id="page-view" class="flex-container">
+        <div id="event" class="event-container">
+            <div class="spacer"></div>
+            <div class="event-card">
+                <h1 class="h-font white" id="event-card-title">Info title</h1>
+                <span class="h-font white event-card-content" id="event-card-temp"></span>
+            </div>
+            <div class="spacer"></div>
         </div>
-        <div id="login-page">
-            <div data-include="login"></div>
+        <!-- FIXME: Fix this :^)  // Make functional -->
+        <div class="event-selector">
+            <div class="select" id="s1"></div>
+            <div class="select" id="s2"></div>
+            <div class="select" id="s3"></div>
         </div>
-        <div id="profile-page">
+        <div id="news">
+            <h1>News</h1>
+        </div>
+        <div id="about">
+            <h1>About</h1>
+        </div>
+        <!-- <div id="profile-page">
             <h1>PROFILE</h1>
-        </div>
+        </div> -->
     </div>
 </body>
 
