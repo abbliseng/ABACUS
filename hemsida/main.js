@@ -49,20 +49,19 @@ window.addEventListener('load', function () {
     load_news()
 })
 
-// 42
-
-/*
-    <div class="news-card" id="n1">
-        <div id="n-date">
-            <span class="h-font white">12 Dec, 2019</span>
-        </div>
-        <div id="n-text">
-            <span id="n-title" class="h-font white">Christer knackar på</span>
-            <span id="n-content" class="h-font white">Lorem ipsum dolor sit amet, consectetur...</span>
-            <span id="n-press" class="h-font white">Tryck för mer information.</span>
-        </div>
-    </div>
-*/
+function s(target = '') {
+    if (target == '' || target == 'event') {
+        // document.body.scrollTop = document.documentElement.scrollTop = 0;
+        window.scroll({
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth' 
+           });
+        return
+    }
+    var access = document.getElementById(target);
+    access.scrollIntoView({behavior: 'smooth'}, true);
+}
 
 function create_span(id, c, content) {
     n_span = document.createElement('span')
@@ -78,7 +77,7 @@ function load_news(date = '00 AAA, 0000', title = 'ERROR:', content="Invalid arg
 
     n = document.createElement('div')
     // DATE SECTION
-    n.setAttribute('class','news-card')
+    n.setAttribute('class','news-card no-touchy')
     // n.setAttribute('id','n2')
     n_date = document.createElement('div')
     n_date.setAttribute('id', 'n-date')
