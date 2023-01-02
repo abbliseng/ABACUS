@@ -42,9 +42,10 @@
     line-height: 35px;
     text-align: center;
 
-    color: #ffc3c4;
+    color: #FFFFFF;
     background-color: transparent;
     border: rgba(0, 0, 0, 0);
+    transition: all .1s ease-in-out;
 }
 
 /* Individual header buttons */
@@ -66,7 +67,8 @@
 }
 
 .header-btn:hover {
-    color: #FFFFFF;
+    /* color: #FFFFFF; */
+    transform: scale(1.1);
 }
 
 /* Profile button */
@@ -96,14 +98,15 @@
 .event-card {    
     width: 100px;
     min-width: 600px;
-    height: 500px;
+    max-width: 1000px;
+    height: 550px;
 
     margin-top: 100px;
     margin-bottom: 20px;
 
     background: #E04E4F;
     border-radius: 15px;
-    flex-grow: 4;
+    flex-grow: 3;
 
     display: flex;
     flex-flow: column wrap;
@@ -193,7 +196,7 @@
 
 .news-card:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 #n-date {
