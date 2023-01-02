@@ -52,6 +52,16 @@ h1 {
     font-style: normal;
     font-weight: 500;
 }
+h2 {
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+}
+h3 {
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 500;
+}
 input {
     font-family: 'Heebo';
     font-style: normal;

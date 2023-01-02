@@ -3,11 +3,12 @@
 <html>
 
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Heebo' rel='stylesheet'></link>
-    <link rel="stylesheet" href="./styles/helpers.css">
-    <link rel="stylesheet" href="./styles/stylesheet.css">
-    <link rel="stylesheet" href="./styles/switch.css">
-    <link rel="stylesheet" href="./styles/login.css">
+    <link href='https://fonts.googleapis.com/css?family=Heebo' rel='stylesheet'>
+    </link>
+    <link rel="stylesheet" href="/styles/helpers.css">
+    <link rel="stylesheet" href="/styles/stylesheet.css">
+    <link rel="stylesheet" href="/styles/switch.css">
+    <link rel="stylesheet" href="/styles/login.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="main.js"></script>
@@ -20,6 +21,10 @@
                 $(this).load(file)
             })
         })
+    </script>
+
+    <script type="module" src="/firebase.js">
+
     </script>
 </head>
 
@@ -41,7 +46,7 @@
             <div class="select" id="s3"></div>
         </div>
         <div id="news" class="news-section">
-            <h1 class="news-title h-font white">Nyheter</h1 >
+            <h1 class="news-title h-font white">Nyheter</h1>
             <div id="news-lister">
                 <div class="news-card no-touchy" id="n1" onclick="console.log('t1')">
                     <div id="n-date">
@@ -56,11 +61,26 @@
             </div>
         </div>
         <div id="about">
-            <h1>About</h1>
+            <div class="spacer"></div>
+            <div class="about-section">
+                <h1>Om oss</h1>
+                <h2>- BAKGRUND -</h2>
+                <h3 style="margin-top: -20px;">För speciellt intresserade och särskilt begåvade elever inom matematik,
+                    teknik och naturvetenskap finns idag alltför få utmaningar. Elever med särskild begåvning behöver
+                    bli stimulerade och få möta likasinnade elever för att inte tappa motivationen eller hamna i
+                    utanförskap. Forskning visar att många talangfulla elever underpresterar för att passa in i den
+                    svenska skolan (Sims 2021). Vi vill bemöta behoven hos dessa elever som i brist på motivation och
+                    utmaning riskerar att bli s.k. hemmasittare eller att drabbas av psykisk ohälsa.</h3>
+                <h2 class="h-font">- PROJEKTGRUPPEN -</h2>
+                <h3 style="margin-top: -20px;">Projektgruppen består av: Christer Norström, professor och ordförande
+                    stiftelsen Fryx, ordförande ABB Gymnasiet, Petra Nygård, rektor Mälardalen International School,
+                    Peter Kallioniemi, matematiklärare Fryxellska skolan, Lisa Engström, programmeringsexpert och
+                    lärarassistent ABB Gymnasiet, Emmy Henriksson, resurslärare ABB Gymnasiet, Ahmad Alali,
+                    Civilingenjörstudent MDU, Joakim Flink AI-lärare ABB Gymnasiet, Tina Degerstedt, förälder och
+                    Andreas Wiik, VD/skolchef/rektor Fryxellska skolan.</h3>
+            </div>
+            <div class="spacer"></div>
         </div>
-        <!-- <div id="profile-page">
-            <h1>PROFILE</h1>
-        </div> -->
     </div>
 </body>
 

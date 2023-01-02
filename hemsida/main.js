@@ -43,13 +43,14 @@ window.addEventListener('load', function () {
     this.document.getElementById('event-card-title').innerHTML = "BOLIBOMPA DRAKEN SLÅR TILL IGEN!"
     this.document.getElementById('event-card-temp').innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed sapien ac enim pretium pulvinar id vel neque. Donec lobortis porta magna, vitae mattis nisi fringilla a. Sed sed iaculis urna. Morbi sit amet mauris accumsan, condimentum neque fringilla, imperdiet sapien. Curabitur vitae nunc augue. Sed eget turpis et augue viverra efficitur eleifend id diam. Nulla eu velit massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi consequat tempus mattis. Etiam consequat nibh ut lacus dignissim dapibus. <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget libero a nisl interdum ullamcorper ac id dui. Proin tincidunt, nunc sed porta tempus, leo sem ullamcorper metus, at tincidunt leo mi sed elit."
     // hide_all_but_one('home-page')
-    load_news()
+    load_news('24 Dec, 2022')
     load_news()
     load_news()
     load_news()
 })
 
 function s(target = '') {
+    // window.location.replace(window.location.href+'../');
     if (target == '' || target == 'event') {
         // document.body.scrollTop = document.documentElement.scrollTop = 0;
         window.scroll({
@@ -60,8 +61,34 @@ function s(target = '') {
         return
     }
     var access = document.getElementById(target);
-    access.scrollIntoView({behavior: 'smooth'}, true);
+    window.scroll({
+        top: access.offsetTop-80, 
+        left: 0, 
+        behavior: 'smooth' 
+       });
+    return
+    // access.scrollIntoView({behavior: 'smooth'}, true);
 }
+
+// The function actually applying the offset
+function offsetAnchor() {
+    if (location.hash.length !== 0) {
+      window.scrollTo(window.scrollX, window.scrollY - 100);
+    }
+  }
+  
+  // Captures click events of all <a> elements with href starting with #
+  $(document).on('click', 'a[href^="#"]', function(event) {
+    // Click events are captured before hashchanges. Timeout
+    // causes offsetAnchor to be called after the page jump.
+    window.setTimeout(function() {
+      offsetAnchor();
+    }, 0);
+  });
+  
+  // Set the offset when entering page with hash present in the url
+  window.setTimeout(offsetAnchor, 0);
+
 
 function create_span(id, c, content) {
     n_span = document.createElement('span')
