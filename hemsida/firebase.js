@@ -40,8 +40,16 @@ async function loadNews() {
   });
 }
 
+async function loadNewsEditor() {
+  var news = await getNews(db)
+  news.forEach(element => {
+    load_news_editor(element.date, element.title, element.content, element.link)
+  });
+}
+
 window.addEventListener('load', function () {
   loadNews()
+  loadNewsEditor()
 })
 
 
@@ -57,9 +65,31 @@ function create_span(id, c, content) {
   return n_span
 }
 
+function load_news_editor(date = '00 AAA, 0000', title = 'ERROR:', content="Invalid arguments passed to element creator jahjsdjasdhadsjahjdsajhsdh", link="www.plezbequite.com/zz/Z/zzz") {
+  var lister = document.getElementById('event-manager')
+  if (!lister) return
+
+  var n = document.createElement('div')
+  n.setAttribute('class', 'event-listing no-touchy')
+  var n_title_content = document.createElement('div')
+  n_title_content.setAttribute('id', 'event-title-and-content')
+  n_title_content.appendChild(create_span('e-title','',title))
+  n_title_content.appendChild(create_span('e-content','',content.slice(0,52) + '...'))
+  n.appendChild(n_title_content)
+  n.appendChild(create_span('e-link','',link))
+  n.appendChild(create_span('e-date','',date))
+  var n_btn = document.createElement('button')
+  n_btn.setAttribute('id', 'edit')
+  n_btn.textContent = '...'
+  n.appendChild(n_btn)
+
+  lister.appendChild(n)
+}
+
+
 function load_news(date = '00 AAA, 0000', title = 'ERROR:', content="Invalid arguments passed to element creator jahjsdjasdhadsjahjdsajhsdh") {
   var lister = document.getElementById('news-lister')
-  console.log(lister)
+  if (!lister) return
 
   var n = document.createElement('div')
   // DATE SECTION
