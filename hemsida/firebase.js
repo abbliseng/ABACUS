@@ -52,11 +52,8 @@ window.addEventListener('load', function () {
   loadNewsEditor()
 })
 
-
-
-
-
-
+// HELPER FUNCTIONS FOR GENERATING HTML
+// TODO: Def. better ways to do this, look into html insertion with {{}} vars?
 function create_span(id, c, content) {
   var n_span = document.createElement('span')
   n_span.setAttribute('id',id)
