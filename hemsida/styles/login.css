@@ -1,48 +1,50 @@
+.login-page {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
 .login-card {
-    position: absolute; 
-    width: 30rem;
-    /* width: 566px; */
-    height: 20rem;
-    /* height: 422px; */
+    width: 40%;
+    min-width: 350px;
+    max-width: 600px;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
     text-align: center;
+
     padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .login-card>#title {
+    width: 100%;
     font-size: 22px;
 }
 
-.login-card>form>#usr {
-    position: relative;
-    display: block;
+.login-card>form {
+    width: 100%;
 
-    /* FIXME: Might need to be relative/scaling height*/
-    height: 49px;
-    width: 80%;
-    margin:auto;
-    margin-top: 15px;
-    
-    padding-left: 15px;
-    border: rgba(0, 0, 0, 0);
-    font-size: 1.25rem;
-    outline: none;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
-.login-card>form>#pass {
-    position: relative;
-    display: block;
 
-    /* FIXME: Might need to be relative/scaling height*/
-    height: 49px;
+.login-card>form>input {
     width: 80%;
-    margin: auto;
     margin-top: 15px;
-    
-    padding-left: 15px;
+    height: 49px;
+
     border: rgba(0, 0, 0, 0);
+
     font-size: 1.25rem;
+
     outline: none;
 }
 
@@ -51,44 +53,35 @@
 }
 
 .login-card>form>button {
-    position: relative;
     width: 80%;
     height: 70px;
-    margin:auto;
     margin-top: 15px;
+
     border: rgba(0, 0, 0, 0);
 
-
-    /* TODO: Make font bolder */
-    font-family: 'Heebo';
-    font-style: normal;
-    font-weight: 500;
     font-size: 24px;
     line-height: 35px;
-    align-items: center;
-    text-align: center;
 
-    color: #000000;
-
-    background: #FFFFFF;
     border-radius: 35px;
     cursor: pointer;
-    /* Animation thing */
+
     transition: all .1s ease-in-out;
 }
 
-/* Animation thing */
 .login-card>form>button:hover {
     transform: scale(1.05);
 }
 
-/* .remember-me>label {
-    position: relative;
-    margin-left: 52%;
-} */
+.remember-me-container {
+    width: 80%;
+    margin-top: 15px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
 
 .remember-me {
     position: relative;
     font-size: 1.25rem;
-    top: 10px;
 }

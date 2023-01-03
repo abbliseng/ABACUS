@@ -4,13 +4,13 @@
 
 <head>
     <link href='https://fonts.googleapis.com/css?family=Heebo' rel='stylesheet'></link>
-    <link rel="stylesheet" href="../styles/helpers.css">
-    <link rel="stylesheet" href="../styles/stylesheet.css">
-    <link rel="stylesheet" href="../styles/switch.css">
-    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="/styles/helpers.css">
+    <link rel="stylesheet" href="/styles/stylesheet.css">
+    <link rel="stylesheet" href="/styles/switch.css">
+    <link rel="stylesheet" href="/styles/login.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="../main.js"></script>
+    <script src="/main.js"></script>
     <!-- Script that allows for a template oriented design -->
     <script>
         $(function () {
@@ -25,17 +25,19 @@
 
 <body class="main">
     <div data-include="toolbar"></div>
-    <div id="page-view">
-        <div class="login-card bg-red no-touchy center">
+    <div id="page-view" class="login-page">
+        <div class="login-card bg-red no-touchy">
             <span id="title" class="white">Logga in för att fortsätta</span>
             <form action="">
                 <input class="bg-dark-red ph white" type="text" name="Username" id="usr" placeholder="Username">
                 <input class="bg-dark-red ph white" type="password" name="Password" id="pass" placeholder="Password">
-                <span id="remember-me" class="remember-me h-font light-red">Remember me</span>
-                <label class="switch">
-                    <input type="checkbox" id="">
-                    <span class="slider round"></span>
-                </label>
+                <div class="remember-me-container">
+                    <span id="remember-me" class="remember-me h-font light-red">Remember me</span>
+                    <label class="switch">
+                        <input type="checkbox" id="">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
                 <button type="submit">Logga in</button>
             </form>
         </div>  
