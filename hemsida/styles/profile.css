@@ -1,0 +1,130 @@
+.profile-page {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#event-manager {
+    background: #E04E4F;
+    color: #FFB2B3;
+
+    border-radius: 15px;
+
+    width: 80%;
+    min-width: 950px;
+    min-height: 600px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#titles {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    /* justify-content: space-between; */
+    text-align: center;
+    width: 80%;
+}
+#titles>.t {
+    width: 42%;
+}
+#titles>.l {
+    width: 24%;
+}
+#titles>.d {
+    width: 24%;
+}
+
+#divider {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 95%;
+    background: #FFB2B3;
+    height: 2px;
+    border-radius: 15px;
+}
+
+#add-event-btn {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: rgba(0, 0, 0, 0);
+    border-radius: 32px;
+    background-color: #CB3132;
+    color: white;
+    height: 30px;
+    width: 95%;
+    outline: none;
+    font-size: 24px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-align: center;
+
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+#add-event-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+#add-event-btn>span{
+    width: 100%;
+}
+
+.event-listing {
+    width: 95%;
+    height: 60px;
+    border-radius: 15px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+}
+
+.event-listing:hover{
+    color: white;
+    background: #CB3132;
+}
+
+#event-title-and-content {
+    margin-left: 10px;
+    width: 46%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+#e-title {
+    font-size: 20px;
+    color: white;
+}
+#e-content {
+    font-size: 16px;
+    margin-top: -5px;
+}
+#e-link {
+    width: 24%;
+}
+#e-date {
+    width: 24%;
+    color: #FFB2B3;
+}
+#edit {
+    background: transparent;
+    color: inherit;
+
+    margin-top: -12px;
+    justify-self: end;
+
+    font-size: 32px;
+
+    border: rgba(0, 0, 0, 0);
+
+    cursor: pointer;
+}

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/styles/stylesheet.css">
     <link rel="stylesheet" href="/styles/switch.css">
     <link rel="stylesheet" href="/styles/login.css">
+    <link rel="stylesheet" href="/styles/profile.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="/main.js"></script>
@@ -25,22 +26,26 @@
 
 <body class="main">
     <div data-include="toolbar"></div>
-    <div id="page-view" class="login-page">
-        <div class="login-card bg-red no-touchy">
-            <span id="title" class="white">Logga in för att fortsätta</span>
-            <form action="">
-                <input class="bg-dark-red ph white" type="email" name="Email" id="usr" placeholder="Email">
-                <input class="bg-dark-red ph white" type="password" name="Password" id="pass" placeholder="Password">
-                <div class="remember-me-container">
-                    <span id="remember-me" class="remember-me h-font light-red">Remember me</span>
-                    <label class="switch">
-                        <input type="checkbox" id="">
-                        <span class="slider round"></span>
-                    </label>
+    <div id="page-view" class="profile-page">
+        <h1>Händelser</h1>
+        <div id="event-manager">
+            <div id="titles">
+                <span class="t">Titel</span>
+                <span class="l">Länk</span>
+                <span class="d">Datum</span>
+            </div>
+            <div id="divider"></div>
+            <button id="add-event-btn"><span>+</span></button>
+            <div class="event-listing no-touchy">
+                <div id="event-title-and-content">
+                    <span id="e-title">Christer knackar på</span>
+                    <span id="e-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                 </div>
-                <button type="submit">Logga in</button>
-            </form>
-        </div>  
+                <span id="e-link">https://shhhhh.com</span>
+                <span id="e-date">25 Dec, 3099</span>
+                <button id="edit">...</button>
+            </div>
+        </div>
     </div>
 </body>
 
