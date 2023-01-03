@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
 // import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
-import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
+import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,6 +24,8 @@ const app = initializeApp(firebaseConfig);
 // Database
 const db = getFirestore(app);
 
+var events = null;
+
 // LOADING NEWS FROM FB
 // Get a list of news from your database
 async function getNews(db) {
@@ -31,6 +33,19 @@ async function getNews(db) {
   const newsSnapshot = await getDocs(newsCol);
   const newsList = newsSnapshot.docs.map(doc => doc.data());
   return newsList;
+}
+
+async function loadSiteInfo(db) {
+  const docRef = doc(db, 'site-info', 'main')
+  const docSnap = await getDoc(docRef)
+
+  if (docSnap.exists()) {
+    document.getElementById('background-info').textContent = docSnap.data()['background'];
+    document.getElementById('projectgroup-info').textContent = docSnap.data()['projectgroup'];
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }
 }
 
 async function loadNews() {
@@ -47,10 +62,22 @@ async function loadNewsEditor() {
   });
 }
 
+async function loadMainEvents(db) {
+  const col = collection(db, 'events');
+  const snapshot = await getDocs(col);
+  const l = snapshot.docs.map(doc => doc.data());
+  events = l
+}
+
 window.addEventListener('load', function () {
   loadNews()
   loadNewsEditor()
+  loadSiteInfo(db)
+  loadMainEvents(db)
 })
+
+// event-card-title
+// event-card-content
 
 // HELPER FUNCTIONS FOR GENERATING HTML
 // TODO: Def. better ways to do this, look into html insertion with {{}} vars?
@@ -71,7 +98,8 @@ function load_news_editor(date = '00 AAA, 0000', title = 'ERROR:', content="Inva
   var n_title_content = document.createElement('div')
   n_title_content.setAttribute('id', 'event-title-and-content')
   n_title_content.appendChild(create_span('e-title','',title))
-  n_title_content.appendChild(create_span('e-content','',content.slice(0,52) + '...'))
+  if (content.length > 52) content = content.slice(0,52) + '...'
+  n_title_content.appendChild(create_span('e-content','',content))
   n.appendChild(n_title_content)
   n.appendChild(create_span('e-link','',link))
   n.appendChild(create_span('e-date','',date))

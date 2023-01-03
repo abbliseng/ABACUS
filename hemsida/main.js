@@ -24,7 +24,7 @@ window.addEventListener('load', function () {
 })
 
 function s(target = '') {
-    if (window.location.href != window.location.origin && window.location.href != window.location.origin+'/') window.location.replace(window.location.href+'../');
+    if (window.location.href != window.location.origin && window.location.href != window.location.origin+'/' && window.location.href != window.location.origin+'/index.html') window.location.replace(window.location.href+'../');
     if (target == '' || target == 'event') {
         // document.body.scrollTop = document.documentElement.scrollTop = 0;
         window.scroll({
