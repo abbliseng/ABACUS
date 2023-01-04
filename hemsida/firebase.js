@@ -1,10 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-// import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
-// import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -23,15 +19,13 @@ const app = initializeApp(firebaseConfig);
 
 // Database
 const db = getFirestore(app);
-
 var events = null;
 
 // LOADING NEWS FROM FB
-// Get a list of news from your database
 async function getNews(db) {
   const newsCol = collection(db, 'news');
   const newsSnapshot = await getDocs(newsCol);
-  const newsList = newsSnapshot.docs.map(doc => doc.data());
+  const newsList = newsSnapshot.docs.map(doc => [doc.id ,doc.data()]);
   return newsList;
 }
 
@@ -43,7 +37,6 @@ async function loadSiteInfo(db) {
     document.getElementById('background-info').textContent = docSnap.data()['background'];
     document.getElementById('projectgroup-info').textContent = docSnap.data()['projectgroup'];
   } else {
-    // doc.data() will be undefined in this case
     console.warn("No such document or not on main page.");
   }
 }
@@ -51,14 +44,14 @@ async function loadSiteInfo(db) {
 async function loadNews() {
   var news = await getNews(db)
   news.forEach(element => {
-    load_news(element.date, element.title, element.content)
+    load_news(element[0], element[1].date, element[1].title, element[1].content)
   });
 }
 
 async function loadNewsEditor() {
   var news = await getNews(db)
   news.forEach(element => {
-    load_news_editor(element.date, element.title, element.content, element.link)
+    load_news_editor(element[0], element[1].date, element[1].title, element[1].content, element[1].link)
   });
 }
 
@@ -69,18 +62,34 @@ async function loadMainEvents(db) {
   events = l
 }
 
+async function getDocumentByID(db, col , id) {
+  const docRef = doc(db, col, id)
+  const docSnap = await getDoc(docRef)
+  var obj = {}
+  if (docSnap.exists()) {
+    obj[docSnap.id] = docSnap.data()
+    return obj
+  } else {
+   console.warn('WARN: No document found!',col, id)
+   return false
+  }
+}
+
+// POP-UP STUFF
+// https://codepen.io/agilBAKA/pen/mWxxyv
+
+//
+
 window.addEventListener('load', function () {
   loadNews()
   loadNewsEditor()
   loadSiteInfo(db)
   loadMainEvents(db)
+  getDocumentByID(db, 'news', 'pcsfrSzhXVAobBbwJ4Pf')
 })
 
-// event-card-title
-// event-card-content
-
 // HELPER FUNCTIONS FOR GENERATING HTML
-function load_news_editor(date = '00 AAA, 0000', title = 'ERROR:', content="Invalid arguments passed to element creator jahjsdjasdhadsjahjdsajhsdh", link="www.plezbequite.com/zz/Z/zzz") {
+function load_news_editor(id = "ERR", date = '00 AAA, 0000', title = 'ERROR:', content="Invalid arguments passed to element creator jahjsdjasdhadsjahjdsajhsdh", link="www.plezbequite.com/zz/Z/zzz") {
   var lister = document.getElementById('event-manager')
   if (!lister) {
     console.warn('Failed to find element:', 'event-manager',lister)
@@ -89,7 +98,7 @@ function load_news_editor(date = '00 AAA, 0000', title = 'ERROR:', content="Inva
   if (content.length > 53) content = content.slice(0,50) + '...'
 
   lister.innerHTML += `
-  <div class="event-listing no-touchy">
+  <div id="${id}" class="event-listing no-touchy">
     <div id="event-title-and-content">
       <span id="e-title" class="">${title}</span>
       <span id="e-content" class="">${content}</span>
@@ -101,8 +110,7 @@ function load_news_editor(date = '00 AAA, 0000', title = 'ERROR:', content="Inva
   `
 }
 
-
-function load_news(date = '00 AAA, 0000', title = 'ERROR:', content="Invalid arguments passed to element creator jahjsdjasdhadsjahjdsajhsdh") {
+function load_news(id ="ERR", date = '00 AAA, 0000', title = 'ERROR:', content="Invalid arguments passed to element creator jahjsdjasdhadsjahjdsajhsdh") {
   var lister = document.getElementById('news-lister')
   if (!lister) {
     console.warn('Failed to find element:', 'news-lister',lister)
@@ -111,7 +119,7 @@ function load_news(date = '00 AAA, 0000', title = 'ERROR:', content="Invalid arg
   if (content.length > 43) content = content.slice(0,40) + '...' 
   
   lister.innerHTML += `
-  <div class="news-card no-touchy">
+  <div id="${id}" class="news-card no-touchy">
     <div id="n-date">
       <span class="h-font white">${date}</span>
     </div>
