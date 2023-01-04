@@ -39,12 +39,12 @@ async function loadSiteInfo(db) {
   const docRef = doc(db, 'site-info', 'main')
   const docSnap = await getDoc(docRef)
 
-  if (docSnap.exists()) {
+  if (docSnap.exists() && document.getElementById('background-info') && document.getElementById('projectgroup-info')) {
     document.getElementById('background-info').textContent = docSnap.data()['background'];
     document.getElementById('projectgroup-info').textContent = docSnap.data()['projectgroup'];
   } else {
     // doc.data() will be undefined in this case
-    console.log("No such document!");
+    console.warn("No such document or not on main page.");
   }
 }
 
@@ -80,64 +80,46 @@ window.addEventListener('load', function () {
 // event-card-content
 
 // HELPER FUNCTIONS FOR GENERATING HTML
-// TODO: Def. better ways to do this, look into html insertion with {{}} vars?
-function create_span(id, c, content) {
-  var n_span = document.createElement('span')
-  n_span.setAttribute('id',id)
-  n_span.setAttribute('class',c)
-  n_span.textContent = content
-  return n_span
-}
-
 function load_news_editor(date = '00 AAA, 0000', title = 'ERROR:', content="Invalid arguments passed to element creator jahjsdjasdhadsjahjdsajhsdh", link="www.plezbequite.com/zz/Z/zzz") {
   var lister = document.getElementById('event-manager')
-  if (!lister) return
+  if (!lister) {
+    console.warn('Failed to find element:', 'event-manager',lister)
+    return
+  }
+  if (content.length > 53) content = content.slice(0,50) + '...'
 
-  var n = document.createElement('div')
-  n.setAttribute('class', 'event-listing no-touchy')
-  var n_title_content = document.createElement('div')
-  n_title_content.setAttribute('id', 'event-title-and-content')
-  n_title_content.appendChild(create_span('e-title','',title))
-  if (content.length > 52) content = content.slice(0,52) + '...'
-  n_title_content.appendChild(create_span('e-content','',content))
-  n.appendChild(n_title_content)
-  n.appendChild(create_span('e-link','',link))
-  n.appendChild(create_span('e-date','',date))
-  var n_btn = document.createElement('button')
-  n_btn.setAttribute('id', 'edit')
-  n_btn.textContent = '...'
-  n.appendChild(n_btn)
-
-  lister.appendChild(n)
+  lister.innerHTML += `
+  <div class="event-listing no-touchy">
+    <div id="event-title-and-content">
+      <span id="e-title" class="">${title}</span>
+      <span id="e-content" class="">${content}</span>
+    </div>
+    <span id="e-link" class="">${link}</span>
+    <span id="e-date" class="">${date}</span>
+    <button id="edit">...</button>
+  </div>
+  `
 }
 
 
 function load_news(date = '00 AAA, 0000', title = 'ERROR:', content="Invalid arguments passed to element creator jahjsdjasdhadsjahjdsajhsdh") {
   var lister = document.getElementById('news-lister')
-  if (!lister) return
-
-  var n = document.createElement('div')
-  // DATE SECTION
-  n.setAttribute('class','news-card no-touchy')
-  // n.setAttribute('id','n2')
-  var n_date = document.createElement('div')
-  n_date.setAttribute('id', 'n-date')
-  var n_span = document.createElement('span')
-  n_span.setAttribute('class', 'h-font white')
-  n_span.textContent = date
-  n_date.appendChild(n_span)
-
-  // TEXT SECTION
-  var n_text = document.createElement('div')
-  n_text.setAttribute('id','n-text')
-  n_span = document.createElement('span')
-  n_text.appendChild(create_span('n-title', 'h-font white', title))
-  n_text.appendChild(create_span('n-content', 'h-font white', content.slice(0,40) + '...'))
-  n_text.appendChild(create_span('n-press', 'h-font white', 'Tryck för mer information.'))
-  n_text.appendChild(n_span)
-
-  n.appendChild(n_date)
-  n.appendChild(n_text)
+  if (!lister) {
+    console.warn('Failed to find element:', 'news-lister',lister)
+    return
+  }
+  if (content.length > 43) content = content.slice(0,40) + '...' 
   
-  lister.appendChild(n)
+  lister.innerHTML += `
+  <div class="news-card no-touchy">
+    <div id="n-date">
+      <span class="h-font white">${date}</span>
+    </div>
+    <div id="n-text">
+      <span id="n-title" class="h-font white">${title}</span>
+      <span id="n-content" class="h-font white">${content}</span>
+      <span id="n-press" class="h-font white">Tryck för mer information.</span>
+    </div>
+  </div>
+  `
 }
